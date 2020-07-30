@@ -12,7 +12,8 @@ export class SearchBar extends Component {
   onFormSubmit=(e)=>{
     e.preventDefault();
 
-   //we call call back from parent component 
+   //we call call back from parent component and passing the user input to the parent or App
+   this.props.onFormSubmit(this.state.userInput)
 
   };
   render() {
