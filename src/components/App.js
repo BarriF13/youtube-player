@@ -4,7 +4,8 @@ import youtube from '../apis/youtube';
 import SearchBar from './SearchBar';
 import VideoList from './VideosList'
 // import axios from 'axios'
-
+import VideoDetail from './VideoDetail'
+import VideoItem from './VideoItem';
 
 const KEY = 'AIzaSyBBmeOObRT4jvNJb3ShAL8wHOBNASz146g';
  class App extends Component {
@@ -41,12 +42,14 @@ onUserInputSubmit = async userInput =>{
 };
 
 onVideoSelect = (video) =>{
-  console.log('form the app', video);
+  // console.log('form the app', video);
+  this.setState({selectedVideo: video});
 }
   render() {
     return (
       <div className="ui container">
        <SearchBar  onFormSubmit={this.onUserInputSubmit}/>
+       <VideoDetail video={this.state.selectedVideo}/>
        {/* I have {this.state.videos.length} videos */}
        <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect}/>
       </div>
