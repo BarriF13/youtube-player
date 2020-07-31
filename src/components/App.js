@@ -39,7 +39,8 @@ class App extends Component {
     // });
     //-------------------------
     this.setState({
-      videos: response.data.items
+      videos: response.data.items,
+      selectedVideo: response.data.items[0]
     })
   };
 
@@ -47,11 +48,15 @@ class App extends Component {
     // console.log('form the app', video);
     this.setState({ selectedVideo: video });
   }
+
+  componentDidMount(){
+    this.onUserInputSubmit('cat')
+  }
   render() {
     return (
       <div className="ui container">
         <SearchBar onFormSubmit={this.onUserInputSubmit} />
-        <div class="ui grid">
+        <div className="ui grid">
           <div className="ui row">
             <div className='eleven wide column'>
               <VideoDetail video={this.state.selectedVideo} />
