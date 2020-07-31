@@ -1,16 +1,17 @@
 import axios from 'axios';
 
-const KEY = 'AIzaSyBBmeOObRT4jvNJb3ShAL8wHOBNASz146g';
+// const KEY = 'AIzaSyBBmeOObRT4jvNJb3ShAL8wHOBNASz146g';
 //MAKING : pre configured instance of axios that is already has a  base URL and some default parameters loaded into it
 export default axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3',
   //option object which called params which contains all the different query string parameters that we want to add it to the request 
-  params: {
-    part: 'snippet',
-    maxResult: 5,
-    key: KEY
+  // params: {
+  //   part: 'snippet',
+  //   maxResult: 5,
+  //   key: KEY
 
-  }
+  // }
+
 });
 
 //client id
